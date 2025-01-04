@@ -1,7 +1,13 @@
+using HotelReservationApp.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+var config = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<DatabaseContext>(opt => opt.UseSqlite(config.GetConnectionString("Database")));
 
 var app = builder.Build();
 
