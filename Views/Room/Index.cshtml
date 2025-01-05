@@ -1,0 +1,26 @@
+@model IEnumerable<HotelReservationApp.Data.Models.Room>
+
+<div class="container mt-4">
+    <div class="text-center form-control bg-info" style="font-size: 36px;">Lista pokoi</div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Identyfikator</th>
+                <th>Typ pokoju</th>
+                <th>Cena za noc</th>
+                <th>Dostępne</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var room in Model)
+            {
+                <tr>
+                    <td>@room.RoomId</td>
+                    <td>@room.Type</td>
+                    <td>@room.PricePerNight</td>
+                    <td>@(room.IsAvailable ? "Tak" : "Nie")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

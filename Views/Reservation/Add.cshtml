@@ -1,0 +1,24 @@
+@model HotelReservationApp.Data.Models.Reservation
+
+<div class="container mt-4">
+    <h2 class="text-center">Add Reservation</h2>
+    <form asp-action="AddReservation" method="post">
+        <div class="mb-3">
+            <label for="RoomId" class="form-label">Room</label>
+            <select asp-for="RoomId" class="form-select" asp-items="ViewBag.Rooms"></select>
+        </div>
+        <div class="mb-3">
+            <label for="CustomerId" class="form-label">Customer</label>
+            <select asp-for="CustomerId" class="form-select" asp-items="ViewBag.Customers"></select>
+        </div>
+        <div class="mb-3">
+            <label for="CheckInDate" class="form-label">Check-In Date</label>
+            <input type="date" asp-for="CheckInDate" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="CheckOutDate" class="form-label">Check-Out Date</label>
+            <input type="date" asp-for="CheckOutDate" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Reservation</button>
+    </form>
+</div>

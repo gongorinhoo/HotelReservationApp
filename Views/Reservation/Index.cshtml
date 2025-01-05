@@ -1,0 +1,31 @@
+@model IEnumerable<HotelReservationApp.Data.Models.Reservation>
+
+<div class="container mt-4">
+    <div class="form-control text-center bg-info" style="font-size: 36px;">Lista rezerwacji</div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Identyfikator</th>
+                <th>Pokój</th>
+                <th>Klient</th>
+                <th>Check-In</th>
+                <th>Check-Out</th>
+                <th>Odpowiedzialny pracownik</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model)
+            {
+                <tr>
+                    <td>@reservation.ReservationId</td>
+                    <td>@reservation.Room.Type</td>
+                    <td>@reservation.Customer.FirstName @reservation.Customer.LastName</td>
+                    <td>@reservation.CheckInDate.ToShortDateString()</td>
+                    <td>@reservation.CheckOutDate.ToShortDateString()</td>
+                    <td>@reservation.Employee.FirstName @reservation.Employee.LastName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
