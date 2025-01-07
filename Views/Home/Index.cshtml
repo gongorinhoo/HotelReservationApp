@@ -1,8 +1,56 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Strona Główna";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container py-5">
+    <div class="text-center">
+        <h1 class="display-4 fw-bold mb-4">Witamy w HotelReservationApp</h1>
+        <p class="lead text-muted mb-5">Zarządzaj rezerwacjami, klientami, pracownikami i pokojami w sposób szybki i intuicyjny.</p>
+    </div>
+
+    <div class="row text-center">
+        <!-- Rezerwacje -->
+        <div class="col-md-4 mb-4">
+            <div class="card border-primary h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Rezerwacje</h5>
+                    <p class="card-text">Przeglądaj i zarządzaj wszystkimi rezerwacjami w jednym miejscu.</p>
+                    <a class="btn btn-primary" asp-controller="Reservation" asp-action="Index">Przejdź do Rezerwacji</a>
+                </div>
+            </div>
+        </div>
+        <!-- Klienci -->
+        <div class="col-md-4 mb-4">
+            <div class="card border-success h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Klienci</h5>
+                    <p class="card-text">Dodawaj i edytuj informacje o klientach w łatwy sposób.</p>
+                    <a class="btn btn-success" asp-controller="Customer" asp-action="Index">Przejdź do Klientów</a>
+                </div>
+            </div>
+        </div>
+        <!-- Pracownicy -->
+        <div class="col-md-4 mb-4">
+            <div class="card border-warning h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Pracownicy</h5>
+                    <p class="card-text">Zarządzaj danymi i zadaniami pracowników.</p>
+                    <a class="btn btn-warning" asp-controller="Employee" asp-action="Index">Przejdź do Pracowników</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <!-- Pokoje -->
+        <div class="col-md-4 offset-md-4 mb-4">
+            <div class="card border-info h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Pokoje</h5>
+                    <p class="card-text">Przeglądaj, edytuj i zarządzaj dostępnością pokoi.</p>
+                    <a class="btn btn-info" asp-controller="Room" asp-action="Index">Przejdź do Pokoi</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
