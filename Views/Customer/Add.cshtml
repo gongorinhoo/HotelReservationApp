@@ -1,20 +1,23 @@
 @model HotelReservationApp.Data.Models.Customer
 
 <div class="container mt-4">
-    <h2 class="text-center">Add Customer</h2>
-    <form asp-action="AddCustomer" method="post">
+    <h2 class="text-center">Dodaj klienta do hotelu</h2>
+    <form asp-action="Add" method="post">
         <div class="mb-3">
-            <label for="FirstName" class="form-label">First Name</label>
+            <label for="FirstName" class="form-label">Imie</label>
             <input type="text" asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label for="LastName" class="form-label">Last Name</label>
+            <label for="LastName" class="form-label">Nazwisko</label>
             <input type="text" asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label for="PhoneNumber" class="form-label">Phone Number</label>
+            <label for="PhoneNumber" class="form-label">Numer telefonu</label>
             <input type="text" asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-primary">Add Customer</button>
+        <button type="submit" class="btn btn-primary">Dodaj klienta</button>
     </form>
 </div>

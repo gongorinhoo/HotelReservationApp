@@ -1,7 +1,7 @@
-@model IEnumerable<HotelReservationApp.Data.Models.Reservation>
+@model IEnumerable<HotelReservationApp.Models.ReservationViewModel>
 
 <div class="container mt-4">
-    <div class="form-control text-center bg-info" style="font-size: 36px;">Lista rezerwacji</div>
+    <div class="form-control text-center bg-primary" style="font-size: 36px;">Lista rezerwacji</div>
 
     <table class="table table-striped">
         <thead>
@@ -12,6 +12,7 @@
                 <th>Check-In</th>
                 <th>Check-Out</th>
                 <th>Odpowiedzialny pracownik</th>
+                <th>Akcje</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,10 @@
                     <td>@reservation.CheckInDate.ToShortDateString()</td>
                     <td>@reservation.CheckOutDate.ToShortDateString()</td>
                     <td>@reservation.Employee.FirstName @reservation.Employee.LastName</td>
+                    <td>
+                        <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@reservation.ReservationId">Edytuj</a>
+                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@reservation.ReservationId">Usuń</a>
+                    </td>
                 </tr>
             }
         </tbody>

@@ -1,21 +1,24 @@
 @model HotelReservationApp.Data.Models.Room
 
 <div class="container mt-4">
-    <h2 class="text-center">Edit Room</h2>
-    <form asp-action="EditRoom" method="post">
+    <h2 class="text-center">Edycja pokoju</h2>
+    <form asp-action="Edit" method="post">
         <input type="hidden" asp-for="RoomId" />
         <div class="mb-3">
-            <label for="Type" class="form-label">Type</label>
+            <label for="Type" class="form-label">Typ</label>
             <input type="text" asp-for="Type" class="form-control" />
+            <span asp-validation-for="Type" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label for="PricePerNight" class="form-label">Price Per Night</label>
-            <input type="number" asp-for="PricePerNight" class="form-control" step="0.01" />
+            <label for="PricePerNight" class="form-label">Cena za noc</label>
+            <input type="text" asp-for="PricePerNight" class="form-control"/>
+            <span asp-validation-for="PricePerNight" class="text-danger"></span>
         </div>
         <div class="form-check mb-3">
             <input type="checkbox" asp-for="IsAvailable" class="form-check-input" />
-            <label for="IsAvailable" class="form-check-label">Available</label>
+            <label for="IsAvailable" class="form-check-label">Czy dostępny?</label>
+            <span asp-validation-for="IsAvailable" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <button type="submit" class="btn btn-primary">Edytuj</button>
     </form>
 </div>

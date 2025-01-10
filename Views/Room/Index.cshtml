@@ -1,4 +1,4 @@
-@model IEnumerable<HotelReservationApp.Data.Models.Room>
+@model IEnumerable<HotelReservationApp.Models.RoomViewModel>
 
 <div class="container mt-4">
     <div class="text-center form-control bg-info" style="font-size: 36px;">Lista pokoi</div>
@@ -9,6 +9,7 @@
                 <th>Typ pokoju</th>
                 <th>Cena za noc</th>
                 <th>Dostępne</th>
+                <th>Akcje</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,7 @@
                     <td>@room.Type</td>
                     <td>@room.PricePerNight</td>
                     <td>@(room.IsAvailable ? "Tak" : "Nie")</td>
+                    <td><a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@room.RoomId">Edytuj</a></td>
                 </tr>
             }
         </tbody>
